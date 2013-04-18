@@ -76,7 +76,7 @@ model_dir = [src_dir 'model'];
 common_dir = [src_dir 'utils'];
 pred_dir = [src_dir 'prediction'];
 prep_dir = [src_dir 'data_preparation'];
-hmsvm_dir = [src_dir 'sotool/apps/hmsvm'];
+hmsvm_dir = [src_dir 'sotool'];
 
 addpath(model_dir);
 addpath(common_dir);
@@ -85,7 +85,7 @@ addpath(prep_dir);
 addpath([src_dir 'training']);
 addpath(pred_dir);
 addpath([src_dir 'evaluation']);
-addpath([src_dir 'matgrid']);
+%addpath([src_dir 'matgrid']);
 addpath(hmsvm_dir);
 
 % paths needed during PARALLEL training/prediction
@@ -263,7 +263,8 @@ CFG.iteration = [];
 
 %%% cluster submission vs. local computation
 % option for using matgrid tools to submit training jobs to a cluster
-CFG.grid_use = 1;
+warning('GRID USAGE IS OFF!')
+CFG.grid_use = 0;
 CFG.grid_memreq         = 16;
 CFG.grid_toolboxreq     = {};
 
